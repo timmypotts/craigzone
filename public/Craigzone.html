@@ -42,12 +42,13 @@
                 <article class="tile is-child notification is-success has-text-centered" id="boxy">
                   <div class="content">
 
+                    <form class="search">
                     <button id="location-button" class="button is-primary is-light">Current City</button>
                     <div id="output"></div>
                         <div class="field">
                             <label class="label"> City </label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="text" placeholder="City To Search?">
+                                <input class="input" type="text" id="city-input" placeholder="City To Search?">
                                 <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                                 </span>
@@ -59,7 +60,7 @@
                             <div class="field">
                                 <label class="label"> Category </label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input" type="text" placeholder="What are you hoping to find?">
+                                    <input class="input" type="text" id="category-input"placeholder="What are you hoping to find?">
                                     <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                     </span>
@@ -71,7 +72,7 @@
                             <div class="field">
                                     <label class="label"> Keyword Search </label>
                                     <div class="control has-icons-left has-icons-right">
-                                        <input class="input" type="text" placeholder= "Let's try to narrow this down">
+                                        <input class="input" type="text" id="keyword-input"placeholder= "Let's try to narrow this down">
                                         <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                         </span>
@@ -112,6 +113,7 @@
                             </div>
                     
                         </div>
+                    </form>
                     </article>
                 </div>
 
