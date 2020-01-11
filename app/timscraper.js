@@ -36,9 +36,9 @@ methods = {
         properties.url = titleEl.getAttribute("href");
         const priceEl = row.querySelector(".result-price");
         properties.price = priceEl ? priceEl.innerText : "";
-        properties.price.trim("$");
+        properties.price = properties.price.replace("$", "");
         const imageEl = row.querySelector(".swipe [data-index='0'] img");
-        properties.imageUrl = imageEl ? imageEl.src : "";
+        properties.image = imageEl ? imageEl.src : "";
         return properties;
       });
     });
@@ -46,17 +46,16 @@ methods = {
     // console.log(url);
     browser.close();
 
-    db.Results.bulkCreate(results)
-      .then(() => {
-        // Notice: There are no arguments here, as of right now you'll have to...
-        return db.Results.findAll();
-      })
-      .then(users => {
-        console.log(users); // ... in order to get the array of user objects
+    for (var i = 0; i < results.length; i++) {
+      db.Results.create({
+        title: results[i].title,
+        url: results[i].url,
+        price: results[i].price,
+        image: results[i].image
+      }).then(output => {
+        console.log(output);
       });
-
-    // console.log(results);
-    // console.log(results[4]);
+    }
     return results;
   }
 };

@@ -18,6 +18,25 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: []
+      }
+    },
+    item: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    priceMin: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    priceMax: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   });
 
