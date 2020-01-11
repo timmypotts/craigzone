@@ -38,8 +38,8 @@
                 <article class="tile is-child notification is-success has-text-centered" id="boxy">
                   <div class="content">
 
-                    <p class="current">Current City:</p>
-            
+                    <button id="location-button" class="current">Current City:</button>
+                    <div id="output"></div>
                         <div class="field">
                             <label class="label"> City </label>
                             <div class="control has-icons-left has-icons-right">
@@ -78,9 +78,21 @@
                     
                             <div class="field">
                                 <label class="label"> Price Range </label>
+
                                 <div class="control">
-                                    <input id="min" class="input" type="text" placeholder= "min"> <input id="max" class="input" type="text" placeholder= "max">
-                                    
+                                    <div class="columns">
+                                        <div class="column is-two-fifths">
+                                            <input class="input" type="text" placeholder="Min">
+                                        </div>
+                                        <div class="column is-auto">
+                                        <!-- <p> unnactive </p>  -->
+                                        </div>
+                                        <div class="column is-two-fifths">
+                                            <input class="input" type="text" placeholder="Max">
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                     
                             <div class="field">
