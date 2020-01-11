@@ -10,15 +10,15 @@ var PORT = process.env.PORT || 8080;
 
 var db = require("./models");
 
-// //handlebars stuff
-// app.engine(
-//   "hbs",
-//   hbs({
-//     extname: "hbs",
-//     defaultLayout: "user",
-//     layoutsDir: __dirname + "/public/handlebars/"
-//   })
-// );
+//handlebars stuff
+app.engine(
+  "hbs",
+  hbs({
+    extname: "hbs",
+    defaultLayout: "user",
+    layoutsDir: __dirname + "/public/handlebars/"
+  })
+);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -38,4 +38,4 @@ db.sequelize.sync().then(function() {
   });
 });
 
-let dump = scraper.data.craigScrape("denver", "pool table", 0, 5000);
+// let dump = scraper.data.craigScrape("denver", "pool table", 0, 5000);
