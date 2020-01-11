@@ -9,7 +9,7 @@ var search = process.argv[3];
 
 nightmare
   .goto(
-    "http://" + city + ".craigslist.org/search/sss?query=" + search 
+    "http://" + city + ".craigslist.org/d/free-stuff/search/zip?query=" + search
   )
   // visits the city specified by the user and by what product they are looking for by user
   .wait(2000)

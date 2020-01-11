@@ -7,10 +7,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="assets/styles.css">
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
  
     <title>Craigzone</title>
 </head>
@@ -42,8 +38,7 @@
                 <article class="tile is-child notification is-success has-text-centered" id="boxy">
                   <div class="content">
 
-                    <button id="location-button">Current City:</button>
-                    <div id="output"></div>
+                    <p class="current">Current City:</p>
             
                         <div class="field">
                             <label class="label"> City </label>
@@ -83,21 +78,9 @@
                     
                             <div class="field">
                                 <label class="label"> Price Range </label>
-
                                 <div class="control">
-                                    <div class="columns">
-                                        <div class="column is-two-fifths">
-                                            <input class="input" type="text" placeholder="Min!">
-                                        </div>
-                                        <div class="column is-auto">
-                                        <!-- <p> unnactive </p>  -->
-                                        </div>
-                                        <div class="column is-two-fifths">
-                                            <input class="input" type="text" placeholder="Max!">
-                                        </div>
-                                    </div>
-                                </div>
-
+                                    <input id="min" class="input" type="text" placeholder= "min"> <input id="max" class="input" type="text" placeholder= "max">
+                                    
                             </div>
                     
                             <div class="field">
@@ -136,18 +119,10 @@
    </div>
 </div>
 
-<<<<<<< HEAD:public/Craigzone.html
 
 
 <script src="location.js"></script>
 </body>
-||||||| merged common ancestors
-
- </body>        
-=======
-<script src="location.js"></script>
- </body>        
->>>>>>> 93cccdafa5e333b5767f1022528e19bfe9fb0c8d:Craigzone.html
 </body>
 </html>
 
