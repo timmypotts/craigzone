@@ -21,14 +21,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: []
       }
     },
     item: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     priceMin: {
       type: DataTypes.INTEGER,
@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     priceMax: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     }
   });
 
