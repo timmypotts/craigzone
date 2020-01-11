@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    
+    <title> Sign Up! </title>
 </head>
-
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
-      </div>
-    </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
 
+    <div class="container">
+        <div class="notification">
+
+
+            <section class="hero is-danger">
+                <div class="hero-body">
+                  <div class="container">
+
+                    <h1 class="title">
+                      Let's get you all Signed Up!
+                    </h1>
+
+                  </div>
+                </div>
+            </section>
+
+            <br>
+
+            <div class="field">
+                <label class="label"> Email Address </label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Your email@email.com goes here...">
+                </div>
+                <p class="help">This is the how we'll contact you with some blazing hot deals!</p>
+              </div>
+              
+              <br>
+              
+              <div class="field">
+                <label class="label"> Password </label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Psssst... what's the password?">
+                </div>
+                <p class="help"> Consider using a password you haven't used before, you know, for security purposes</p>
+              </div>
+
+              <div class="buttons">
+                <button class="button is-danger is-rounded"> Sign Me Up! </button>
+              </div>
+        </div>
+    </div>    
+    
 </body>
-
 </html>

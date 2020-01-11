@@ -7,9 +7,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="assets/styles.css">
- 
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
     <title>Craigzone</title>
 </head>
+
 <body class ="landingPage">
 
     <section class="hero is-white has-text-centered" id="hero">
@@ -38,8 +42,8 @@
                 <article class="tile is-child notification is-success has-text-centered" id="boxy">
                   <div class="content">
 
-                    <p class="current">Current City:</p>
-            
+                    <button id="location-button" class="button is-primary is-light">Current City</button>
+                    <div id="output"></div>
                         <div class="field">
                             <label class="label"> City </label>
                             <div class="control has-icons-left has-icons-right">
@@ -78,9 +82,21 @@
                     
                             <div class="field">
                                 <label class="label"> Price Range </label>
+
                                 <div class="control">
-                                    <input id="min" class="input" type="text" placeholder= "min"> <input id="max" class="input" type="text" placeholder= "max">
-                                    
+                                    <div class="columns">
+                                        <div class="column is-two-fifths">
+                                            <input class="input" type="text" placeholder="Min">
+                                        </div>
+                                        <div class="column is-auto">
+                                        <!-- <p> unnactive </p>  -->
+                                        </div>
+                                        <div class="column is-two-fifths">
+                                            <input class="input" type="text" placeholder="Max">
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                     
                             <div class="field">
@@ -103,7 +119,7 @@
                     <article class="tile is-child notification is-success has-text-centered" id="submit">
                       <div class="content">
 
-                        <button class="button is-link has-text-centered">
+                        <button class="button is-primary has-text-centered">
                            Find Me Deals!
                         </button>
 

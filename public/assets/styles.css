@@ -1,7 +1,11 @@
 .landingPage{
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSPmGm2A5-D9zHoa3utzaS9EGefT9ldOpgDBxd9r5O5E512WC4&s);
 
-  
+}
+
+.login-page{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSPmGm2A5-D9zHoa3utzaS9EGefT9ldOpgDBxd9r5O5E512WC4&s);
+
 }
 
 
@@ -55,4 +59,19 @@ input:focus::placeholder {
     width: 130px;
     text-align: left;
 }
+
+#location-button{
+    /* padding: 10px; */
+    position: relative;
+    bottom: 15px;
+}
  
+.hero{
+ background-color:rgb(73, 3, 73);   
+ color: whitesmoke;
+}
+
+/* #login-button{
+    background-color:rgb(73, 3, 73);
+    
+} */
