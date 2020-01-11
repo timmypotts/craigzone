@@ -6,6 +6,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
+    console.log(req.user);
     // If the user already has an account send them to the users page
     if (req.user) {
       res.redirect("/Craigzone");

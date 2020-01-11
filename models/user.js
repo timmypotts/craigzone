@@ -16,8 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       }
-
-      //,
+      // },
       // wantsEmail: {
       //   type: DataTypes.BOOLEAN,
       //   defaultValue: true,
@@ -36,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
       // },
       // priceMin: {
       //   type: DataTypes.INTEGER,
-      //   allowNull: false
+      //   allowNull: true
       // },
       // priceMax: {
       //   type: DataTypes.INTEGER,
