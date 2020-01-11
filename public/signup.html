@@ -5,19 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/signup.js"></script>
+    <link rel="stylesheet" href="./assets/styles.css" />
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-    
+    <link rel="stylesheet" href="assets/styles.css">
     <title> Sign Up! </title>
 </head>
-<body>
+
+<body class="signup">
+
+  <section class="hero is-white has-text-centered" id="hero">
+    <div class="hero-body">
+      <div class="container">
+
+        <a href="https://fontmeme.com/fallout-new-vegas-font/"><img src="https://fontmeme.com/permalink/200107/2690f1c67744ce504ee97846f43fa2cd.png" alt="fallout-new-vegas-font" border="0"></a>
+        <p class="tagline">lemme know dawg</p>
+    </div>
+</div>
+<h2 class="subtitle has-text-centered">
+                
+            </h2>
+</section>
+
+<br>
 
 
     <div class="container">
         <div class="notification">
 
 
-            <section class="hero is-danger">
+            <section class="hero is-6">
                 <div class="hero-body">
                   <div class="container">
 
@@ -31,10 +51,16 @@
 
             <br>
 
+
+
+           
+            <form class="field">
+
             <div class="field">
                 <label class="label"> Email Address </label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Your email@email.com goes here...">
+                  <input class="input" type="text" id="email-input" placeholder="Your email@email.com goes here...">
+
                 </div>
                 <p class="help">This is the how we'll contact you with some blazing hot deals!</p>
               </div>
@@ -44,13 +70,20 @@
               <div class="field">
                 <label class="label"> Password </label>
                 <div class="control">
+
+
                   <input class="input" type="text" placeholder="Psssst... what's the password?">
+
+                
                 </div>
                 <p class="help"> Consider using a password you haven't used before, you know, for security purposes</p>
               </div>
 
               <div class="buttons">
-                <button class="button is-danger is-rounded"> Sign Me Up! </button>
+                <button class="button is-primary is-rounded"> Sign Me Up! </button>
+
+              </form>
+
               </div>
         </div>
     </div>    

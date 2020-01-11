@@ -1,9 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Results = sequelize.define("Results", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -23,15 +19,15 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Results.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Results.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Results.associate = function(models) {
+  //   // We're saying that a Post should belong to an Author
+  //   // A Post can't be created without an Author due to the foreign key constraint
+  //   Results.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return Results;
 };
