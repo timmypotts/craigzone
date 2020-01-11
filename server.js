@@ -3,7 +3,7 @@ var path = require("path");
 var session = require("express-session");
 const hbs = require("express-handlebars");
 const scraper = require("./app/timscraper.js");
-const passport = require("passport");
+var passport = require("./config/passport");
 
 var app = express();
 var PORT = process.env.PORT || 8080;
@@ -16,7 +16,7 @@ app.engine(
   hbs({
     extname: "hbs",
     defaultLayout: "user",
-    layoutsDir: __dirname + "/public/handlebars/"
+    layoutsDir: __dirname + "/public/layout/"
   })
 );
 
@@ -25,6 +25,10 @@ app.use(express.json());
 
 // // Static directory
 app.use(express.static("public"));
+
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());

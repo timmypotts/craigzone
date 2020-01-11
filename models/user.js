@@ -1,44 +1,50 @@
 const bcrypt = require("bcryptjs");
 
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    userEmail: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
+  var User = sequelize.define(
+    "User",
+    {
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true
+        }
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
+
+      //,
+      // wantsEmail: {
+      //   type: DataTypes.BOOLEAN,
+      //   defaultValue: true,
+      //   allowNull: false
+      // },
+      // city: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true,
+      //   validate: {
+      //     len: []
+      //   }
+      // },
+      // item: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true
+      // },
+      // priceMin: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: false
+      // },
+      // priceMax: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: true
+      // }
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    wantsEmail: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: true,
-      allowNull: false
-    },
-    city: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: []
-      }
-    },
-    item: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    priceMin: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    priceMax: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    }
-  });
+    { freezeTableName: true, timestamps: false }
+  );
 
   User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
@@ -54,17 +60,11 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   //Associating the user with their search preferences
-  User.associate = function(models) {
-    User.hasMany(models.Search, {
-      onDelete: "cascade"
-    });
-  };
-
-  User.associate = function(models) {
-    User.hasMany(models.Results, {
-      onDelete: "cascade"
-    });
-  };
+  // User.associate = function(models) {
+  //   User.hasMany(models.Results, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
   return User;
 };
