@@ -55,4 +55,10 @@ input:focus::placeholder {
     width: 130px;
     text-align: left;
 }
+
+#location-button{
+    /* padding: 10px; */
+    position: relative;
+    bottom: 15px;
+}
  
