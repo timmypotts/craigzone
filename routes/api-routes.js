@@ -59,7 +59,7 @@ module.exports = function(app) {
       },
       {
         where: {
-          email: req.body.email
+          email: req.user.email
         }
       }
     ).then(function(dbUser) {
