@@ -1,9 +1,10 @@
-$("#location-button").click(function() {
+$('#location-button').click(function(e) {
+  e.preventDefault()
+  console.log("it works")
   if (navigator.geolocation)
     navigator.geolocation.getCurrentPosition(function(position) {
       console.log(position);
-      $.get(
-        "http://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBjYUEgKyxA_Nh3ulDtC3vl6dV7PbT_Xh8&latlng=" +
+      $.get("http://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBjYUEgKyxA_Nh3ulDtC3vl6dV7PbT_Xh8&latlng=" +
           position.coords.latitude +
           "," +
           position.coords.longitude +
@@ -20,7 +21,7 @@ $("#location-button").click(function() {
         "," +
         position.coords.longitude +
         "&zoom=13&size=800x400&sensor=false";
-      $("div#output").html(img);
+      $('#output').html(img);
     });
   else console.log("geolocation is not supported");
 });
