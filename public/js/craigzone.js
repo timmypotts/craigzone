@@ -3,6 +3,7 @@ $(document).ready(function() {
   console.log("Whats up");
   var searchParams = $("form.search");
   var cityInput = $("input#city-input");
+  console.log(cityInput);
   var itemInput = $("input#item-input");
   var minInput = $("input#priceMin-input");
   var maxInput = $("input#priceMax-input");
@@ -26,6 +27,7 @@ $(document).ready(function() {
       searchData.priceMax
     );
     cityInput.val("");
+    console.log();
     itemInput.val("");
     minInput.val("");
     maxInput.val("");
@@ -33,7 +35,7 @@ $(document).ready(function() {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function saveSearch(searchData) {
+  function saveSearch(city, item, priceMin, priceMax) {
     $.put("/api/search", {
       city: city,
       item: item,

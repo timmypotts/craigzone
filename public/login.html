@@ -8,6 +8,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/login.js"></script>
     <link rel="stylesheet" href="./assets/styles.css" />
     <title>Let's Log You In!</title>
   </head>
@@ -43,12 +45,16 @@
 
         <br />
 
+                   
+        <form class="login">
+
         <div class="field">
           <label class="label"> Email Address </label>
           <div class="control">
             <input
               class="input"
               type="email"
+              id="email-input"
               placeholder="Your email@email.com goes here..."
             />
           </div>
@@ -62,7 +68,8 @@
           <div class="control">
             <input
               class="input"
-              type="text"
+              id="password-input"
+              type="password"
               placeholder="Psssst... what's the password?"
             />
           </div>
@@ -73,6 +80,8 @@
           <button id="login-button" class="button is-primary">
             Let me in!
           </button>
+
+        </form>
         </div>
       </div>
     </div>
