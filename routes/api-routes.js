@@ -49,6 +49,7 @@ module.exports = function(app) {
   });
 
   app.put("/api/search", function(req, res) {
+    console.log("req.body");
     db.User.update(
       {
         city: req.body.city,
