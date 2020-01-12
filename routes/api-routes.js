@@ -16,7 +16,8 @@ module.exports = function(app) {
     console.log(req.body.email);
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      wantsEmail: true
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -45,5 +46,24 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  app.put("/api/search", function(req, res) {
+    console.log("req.body");
+    db.User.update(
+      {
+        city: req.body.city,
+        item: req.body.item,
+        priceMin: req.body.priceMin,
+        priceMax: req.body.priceMax
+      },
+      {
+        where: {
+          email: req.body.email
+        }
+      }
+    ).then(function(dbUser) {
+      res.json(dbUser);
+    });
   });
 };

@@ -1,43 +1,47 @@
 $(document).ready(function() {
   // Getting references to our form and input
-  var signUpForm = $("form.search");
-  var emailInput = $("input#city-input");
-  var passwordInput = $("input#password-input");
+  console.log("Whats up");
+  var searchParams = $("form.search");
+  var cityInput = $("input#city-input");
+  var itemInput = $("input#item-input");
+  var minInput = $("input#priceMin-input");
+  var maxInput = $("input#priceMax-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", function(event) {
+  $("#submit").click(function() {
     event.preventDefault();
-    var userData = {
-      email: emailInput.val().trim(),
-      password: passwordInput.val().trim()
+    console.log("click");
+    var searchData = {
+      city: cityInput.val().trim(),
+      item: itemInput.val().trim(),
+      priceMin: minInput.val().trim(),
+      priceMax: maxInput.val().trim()
     };
-    console.log(userData);
+    console.log(searchData);
 
-    if (!userData.email || !userData.password) {
-      return;
-    }
-    // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password);
-    emailInput.val("");
-    passwordInput.val("");
+    saveSearch(
+      searchData.city,
+      searchData.item,
+      searchData.priceMin,
+      searchData.priceMax
+    );
+    cityInput.val("");
+    itemInput.val("");
+    minInput.val("");
+    maxInput.val("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(email, password) {
-    $.post("/api/signup", {
-      email: email,
-      password: password
-    })
-      .then(function(data) {
-        window.location.replace("/Craigzone");
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
-      .catch(handleLoginErr);
-  }
-
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
+  function saveSearch(searchData) {
+    $.put("/api/search", {
+      city: city,
+      item: item,
+      priceMin: priceMin,
+      priceMax: priceMax
+    }).then(function(data) {
+      next();
+      // If there's an error, handle it by throwing up a bootstrap alert
+    });
   }
 });

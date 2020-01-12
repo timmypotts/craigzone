@@ -15,33 +15,31 @@ module.exports = function(sequelize, DataTypes) {
       password: {
         type: DataTypes.STRING,
         allowNull: false
+      },
+      wantsEmail: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+        allowNull: false
+      },
+      city: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        validate: {
+          len: []
+        }
+      },
+      item: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      priceMin: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+      },
+      priceMax: {
+        type: DataTypes.INTEGER,
+        allowNull: true
       }
-
-      //,
-      // wantsEmail: {
-      //   type: DataTypes.BOOLEAN,
-      //   defaultValue: true,
-      //   allowNull: false
-      // },
-      // city: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true,
-      //   validate: {
-      //     len: []
-      //   }
-      // },
-      // item: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true
-      // },
-      // priceMin: {
-      //   type: DataTypes.INTEGER,
-      //   allowNull: false
-      // },
-      // priceMax: {
-      //   type: DataTypes.INTEGER,
-      //   allowNull: true
-      // }
     },
     { freezeTableName: true, timestamps: false }
   );

@@ -7,10 +7,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="assets/styles.css">
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script type="text/javascript" src="js/craigzone.js"></script>
+    <script type="text/javascript" src="js/location.js"></script>
     <title>Craigzone</title>
 </head>
 
@@ -21,6 +20,7 @@
           <div class="container">
 
             <a href="https://fontmeme.com/fallout-new-vegas-font/"><img src="https://fontmeme.com/permalink/200107/2690f1c67744ce504ee97846f43fa2cd.png" alt="fallout-new-vegas-font" border="0"></a>
+
             <p class="tagline">lemme know dawg</p>
         </div>
     </div>
@@ -57,7 +57,7 @@
                                 </span>
                             </div>
                     
-                            <div class="field">
+                            <!-- <div class="field">
                                 <label class="label"> Category </label>
                                 <div class="control has-icons-left has-icons-right">
                                     <input class="input" type="text" id="category-input"placeholder="What are you hoping to find?">
@@ -67,12 +67,12 @@
                                     <span class="icon is-small is-right">
                                     <i class="fas fa-check"></i>
                                     </span>
-                            </div>
+                            </div> -->
                     
                             <div class="field">
-                                    <label class="label"> Keyword Search </label>
+                                    <label class="label"> Item </label>
                                     <div class="control has-icons-left has-icons-right">
-                                        <input class="input" type="text" id="keyword-input"placeholder= "Let's try to narrow this down">
+                                        <input class="input" type="text" id="item-input" placeholder= "Let's try to narrow this down">
                                         <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                         </span>
@@ -87,13 +87,13 @@
                                 <div class="control">
                                     <div class="columns">
                                         <div class="column is-two-fifths">
-                                            <input class="input" type="text" placeholder="Min">
+                                            <input class="input" type="text" id="priceMin-input" placeholder="Min">
                                         </div>
                                         <div class="column is-auto">
                                         <!-- <p> unnactive </p>  -->
                                         </div>
                                         <div class="column is-two-fifths">
-                                            <input class="input" type="text" placeholder="Max">
+                                            <input class="input" type="text" id="priceMax-input" placeholder="Max">
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@
                             <div class="field">
                                 <label class="label"> Email </label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input" type="text" placeholder= "What's Your Email?">
+                                    <input class="input" type="email" id="email-input" placeholder= "What's Your Email?">
                                     <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                     </span>
@@ -121,7 +121,7 @@
                     <article class="tile is-child notification is-success has-text-centered" id="submit">
                       <div class="content">
 
-                        <button class="button is-primary has-text-centered">
+                        <button class="button is-primary has-text-centered" id="submit" type="submit">
                            Find Me Deals!
                         </button>
 
@@ -136,7 +136,6 @@
       </div>
    </div>
 </div>
-
 
 
 <script src="js/location.js"></script>
