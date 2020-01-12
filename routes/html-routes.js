@@ -23,6 +23,9 @@ module.exports = function(app) {
   });
 
   app.get("/Craigzone", function(req, res) {
+    console.log("User data");
+    console.log(req.user);
+    console.log("PING BITCH");
     res.sendFile(path.join(__dirname, "../public/Craigzone.html"));
   });
 

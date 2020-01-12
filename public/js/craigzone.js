@@ -20,12 +20,7 @@ $(document).ready(function() {
     };
     console.log(searchData);
 
-    saveSearch(
-      searchData.city,
-      searchData.item,
-      searchData.priceMin,
-      searchData.priceMax
-    );
+    saveSearch(searchData);
     cityInput.val("");
     console.log();
     itemInput.val("");
@@ -35,15 +30,18 @@ $(document).ready(function() {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function saveSearch(city, item, priceMin, priceMax) {
-    $.put("/api/search", {
-      city: city,
-      item: item,
-      priceMin: priceMin,
-      priceMax: priceMax
-    }).then(function(data) {
-      next();
-      // If there's an error, handle it by throwing up a bootstrap alert
+  function saveSearch(searchData) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/search",
+      data: searchData
+    }).then(function() {
+      console.log("Success");
     });
+  }
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
   }
 });
