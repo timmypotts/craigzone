@@ -27,7 +27,12 @@ $(document).ready(function() {
   function signUpUser(email, password) {
     $.post("/api/signup", {
       email: email,
-      password: password
+      password: password,
+      wantsEmail: true,
+      city: null,
+      item: null,
+      priceMin: null,
+      priceMax: null
     })
       .then(function(data) {
         window.location.replace("/Craigzone");
