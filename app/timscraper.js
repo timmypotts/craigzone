@@ -1,10 +1,7 @@
 async function getResults(City, Item, MinPrice, MaxPrice) {
   const puppeteer = require("puppeteer");
   const db = require("../models");
-  const browser = await puppeteer.launch({
-    headless: true,
-    defaultViewport: null
-  });
+  const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
 
   var city = City;
   var item = Item;
