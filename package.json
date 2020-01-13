@@ -1,5 +1,5 @@
 {
-  "name": "group-project-2",
+  "name": "craigzone",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timmypotts/craigfinder.git"
+    "url": "git+https://github.com/timmypotts/craigzone.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/timmypotts/craigfinder/issues"
+    "url": "https://github.com/timmypotts/craigzone/issues"
   },
-  "homepage": "https://github.com/timmypotts/craigfinder#readme"
+  "homepage": "https://github.com/timmypotts/craigzone#readme"
 }
