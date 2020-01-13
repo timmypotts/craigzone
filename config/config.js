@@ -16,12 +16,6 @@ module.exports = {
     dialect: "mysql"
   },
   production: {
-    username: process.env.JAWSDB_PASSWORD,
-    password: "mxtkbkp7tra0i32x",
-    database: "craigZoneDB",
-    port: "3306",
-    use_env_variable: "JAWSDB_URL",
-    host: "y06qcehxdtkegbeb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    dialect: "mysql"
+    use_env_variable: "JAWSDB_URL"
   }
 };
