@@ -6,7 +6,6 @@ var path = require("path");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
-    console.log(req.user);
     // If the user already has an account send them to the users page
     if (req.user) {
       res.redirect("/login");
@@ -15,7 +14,6 @@ module.exports = function(app) {
   });
 
   app.get("/login", function(req, res) {
-    // If the user already has an account send them to the users page
     if (req.user) {
       res.redirect("/Craigzone");
     }
@@ -23,9 +21,6 @@ module.exports = function(app) {
   });
 
   app.get("/Craigzone", function(req, res) {
-    console.log("User data");
-    console.log(req.user);
-    console.log("PING BITCH");
     res.sendFile(path.join(__dirname, "../public/Craigzone.html"));
   });
 
